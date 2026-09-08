@@ -6,8 +6,7 @@ target/
 .env
 ### IntelliJ IDEA ###
 .idea/*
-!.idea/runConfigurations/
-!.idea/runConfigurations/**
+!.run/
 
 ### Eclipse ###
 .apt_generated
