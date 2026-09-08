@@ -5,13 +5,9 @@ target/
 .kotlin
 .env
 ### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-*.iws
-*.iml
-*.ipr
+.idea/*
+!.idea/runConfigurations/
+!.idea/runConfigurations/**
 
 ### Eclipse ###
 .apt_generated
