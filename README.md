@@ -20,6 +20,7 @@ Language - Java 21
 
 
 Prerequisites
+
 Before you start, make sure you have:
 
 JDK 21 installed and make sure JAVA_HOME points to your JDK 21 (for Maven) and
