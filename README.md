@@ -4,16 +4,23 @@ sensitive information (passwords) are hashed using dbCrypt before stored into th
 
 Features
 Real time messaging - multiple clients can connect and chat simultaneously over TCP sockets.
+
 User authentication - Users can create an account and log in
+
 secure password storage - passwords are hashed using jBCrypt
+
 chat history - every message gets logged and stored
+
 multi threaded server - handles concurrent client connections
 
 
 Tech stack
 UI - JavaFX + FXML (built with scenebuilder)
+
 Networking - Java Sockets (TCP)
+
 Password security - jBCrypt
+
 Language - Java 21
 
 
