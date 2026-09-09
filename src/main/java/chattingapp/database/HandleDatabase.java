@@ -5,21 +5,22 @@ import java.sql.Connection;
 
 import static chattingapp.database.LoginHelper.checkPassword;
 import static chattingapp.database.LoginHelper.passwordHasher;
-
+import io.github.cdimascio.dotenv.Dotenv;
 
 public class HandleDatabase {
     public static boolean accountResult = false;
     private static Connection connection;
 
 
-        //coonects to mySQL database on startup
+        //connects to mySQL database on startup
     private static void initalizeConnection() throws SQLException  {
+        Dotenv dotenv = Dotenv.load();
         try {
-            String dbHost = System.getenv("DB_HOST");
-            String dbPort = System.getenv("DB_PORT");
-            String dbUser = System.getenv("DB_USER");
-            String dbPassword = System.getenv("DB_PASSWORD");
-            String dbName = System.getenv("DB_NAME");
+            String dbHost = dotenv.get("DB_HOST");
+            String dbPort = dotenv.get("DB_PORT");
+            String dbUser = dotenv.get("DB_USER");
+            String dbPassword = dotenv.get("DB_PASSWORD");
+            String dbName = dotenv.get("DB_NAME");
             String url = "jdbc:mysql://" + dbHost + ":" + dbPort + "/" + dbName;
             connection = DriverManager.getConnection(url, dbUser, dbPassword);
             System.out.println("CONNECTED TO DATABASE");

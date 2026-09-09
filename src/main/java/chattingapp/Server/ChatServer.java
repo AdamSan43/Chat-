@@ -3,6 +3,7 @@ package chattingapp.Server;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import io.github.cdimascio.dotenv.Dotenv;
 
 
 
@@ -10,11 +11,12 @@ public class ChatServer {
     public static void main(String[] args) {
         ChatRoom room;
         ServerSocket serverSocket;
+        Dotenv dotenv = Dotenv.configure().directory(".").ignoreIfMissing().load();
 
         try {
 
         room = new ChatRoom();
-        int serverPort = Integer.parseInt(System.getenv("SERVER_PORT"));
+        int serverPort = Integer.parseInt(dotenv.get("SERVER_PORT"));
         serverSocket = new ServerSocket(serverPort);
         System.out.println("server");
 

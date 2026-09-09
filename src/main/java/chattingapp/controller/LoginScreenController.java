@@ -18,12 +18,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.Socket;
 import java.sql.SQLException;
+import io.github.cdimascio.dotenv.Dotenv;
 
 
 public class LoginScreenController {
     HandleDatabase database = new HandleDatabase();
     LoginHelper login = new LoginHelper();
     public static String currentUser = "";
+    Dotenv dotenv = Dotenv.load();
 
 
 
@@ -86,8 +88,8 @@ public class LoginScreenController {
             if(database.login(username,password)) {
                 System.out.println("LOGGED IN");
                 Sockets socket = new Sockets();
-                String serverHost = System.getenv("SERVER_HOST");
-                int serverPort = Integer.parseInt(System.getenv("SERVER_PORT"));
+                String serverHost = dotenv.get("SERVER_HOST");
+                int serverPort = Integer.parseInt(dotenv.get("SERVER_PORT"));
 
                 Socket rawSocket = new Socket(serverHost, serverPort);
                 socket.initConnection(rawSocket);
