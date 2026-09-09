@@ -10,7 +10,7 @@ chat history - every message gets logged and stored
 multi threaded server - handles concurrent client connections
 
 
-tech stack
+Tech stack
 UI - JavaFX + FXML (built with scenebuilder)
 Networking - Java Sockets (TCP)
 Password security - jBCrypt
@@ -22,7 +22,7 @@ Language - Java 21
 Prerequisites
 Before you start, make sure you have:
 
-JDK 21 installed and make sure JAVA_HOME points to your JDK 21 (for Maven)
+JDK 21 installed and make sure JAVA_HOME points to your JDK 21 (for Maven) and
 Docker Desktop is installed and running
 
 Getting started
@@ -45,7 +45,7 @@ enter the password in your .env and confirm the tables exist
 7.  ./mvnw compile org.codehaus.mojo:exec-maven-plugin:3.1.0:java "-Dexec.mainClass=chattingapp.Server.ChatServer" 
 this runs the server, keep this terminal open
 
-8. on your second terminal (navigate to the correct directory in your terminal where you downloaded the application first) then run./mvnw javafx:run 
+8. On your second terminal (navigate to the correct directory in your terminal where you downloaded the application first) then run./mvnw javafx:run 
 
 
 
